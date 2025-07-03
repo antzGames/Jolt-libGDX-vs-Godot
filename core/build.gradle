@@ -1,0 +1,15 @@
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+eclipse.project.name = appName + '-core'
+
+dependencies {
+  api "com.badlogicgames.gdx:gdx:$gdxVersion"
+  api "com.github.mgsx-dev.gdx-gltf:gltf:$gdxGltfVersion"
+  api "com.github.tommyettinger:formic:$formicVersion"
+  implementation("com.github.xpenatan.gdx-jolt:jolt-core:-SNAPSHOT")
+  implementation("com.github.xpenatan.gdx-jolt:jolt-gdx:-SNAPSHOT")
+
+
+  if(enableGraalNative == 'true') {
+    implementation "io.github.berstanio:gdx-svmhelper-annotations:$graalHelperVersion"
+  }
+}
