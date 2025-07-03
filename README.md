@@ -12,6 +12,10 @@ You should change the number of threads libGDX uses for Jolt.  Set `Jolt.New_Job
 
 The complete report can be viewed for more information: `JoltPhysics-Godot-vs-libGDX.pdf`
 
+The test is based on **xpenatan**'s `gdx-jolt` sample test called [BoxSpawnTest.java](https://github.com/xpenatan/gdx-jolt/blob/master/examples/samples/core/src/main/java/jolt/example/samples/app/tests/playground/box/BoxSpawnTest.java)
+
+His original smaples can be viewed [here](https://xpenatan.github.io/gdx-jolt/examples/samples/).
+
 ## Platforms
 
 - `core`: Main module with the application logic shared by all platforms.
