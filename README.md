@@ -1,6 +1,6 @@
 # JoltBenchmarks: libGDX vs. Godot
 
-## This repo contains a libGDX project and Godot 4.5.beta1 compiled Windows binaries, and WASM web build.
+### This repo contains a libGDX project and Godot 4.5.beta1 compiled Windows binaries, and WASM single thread web build.
 
 The Godot binaries are in the `Godot_Export` directory.  Run `JoltTests.exe` from the command line so you can get the reports.
 
@@ -14,7 +14,7 @@ The complete report can be viewed for more information: `JoltPhysics-Godot-vs-li
 
 The test is based on **xpenatan**'s `gdx-jolt` sample test called [BoxSpawnTest.java](https://github.com/xpenatan/gdx-jolt/blob/master/examples/samples/core/src/main/java/jolt/example/samples/app/tests/playground/box/BoxSpawnTest.java)
 
-His original smaples can be viewed [here](https://xpenatan.github.io/gdx-jolt/examples/samples/).
+His original samples can be viewed [here](https://xpenatan.github.io/gdx-jolt/examples/samples/).
 
 ## Platforms
 
