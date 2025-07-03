@@ -2,7 +2,7 @@
 
 ### This repo contains a libGDX project and Godot 4.5.beta1 compiled Windows binaries, and WASM single thread web build.
 
-The Godot binaries are in the `Godot_Export` directory.  Run `JoltTests.exe` from the command line so you can get the reports.
+The Godot windows binaries are in the `Godot_Export` directory.  Run `JoltTests.exe` from the command line so you can get the reports.
 
 To run the Godot HTML build, go into the `Godot_Export\HTML` directory and run `server.bat` from the command line.
 
