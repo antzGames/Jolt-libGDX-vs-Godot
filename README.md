@@ -1,6 +1,6 @@
 # JoltBenchmarks: libGDX vs. Godot
 
-## This repo contains a libGDX project and Godot 4.5.beta1 compiled Windows binaries.
+## This repo contains a libGDX project and Godot 4.5.beta1 compiled Windows binaries, and WASM web build.
 
 The Godot binaries are in the `Godot_Export` directory.  Run `JoltTests.exe` from the command line so you can get the reports.
 
