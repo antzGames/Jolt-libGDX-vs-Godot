@@ -10,7 +10,7 @@ For the libGDX version just import this repo as a gradle project.  I used Java 1
 
 You should change the number of threads libGDX uses for Jolt.  Set `Jolt.New_JobSystemThreadPool()` in the `JoltInstance` class to the number of threads your CPU has minus 1. 
 
-The complete report can be viewed for more information: `JoltPhysics-Godot-vs-libGDX.pdf`
+The complete report can be viewed for more information: [JoltPhysics-Godot-vs-libGDX.pdf](https://github.com/antzGames/Jolt-libGDX-vs-Godot/blob/master/JoltPhysics-Godot-vs-libGDX.pdf)
 
 The test is based on **xpenatan**'s `gdx-jolt` sample test called [BoxSpawnTest.java](https://github.com/xpenatan/gdx-jolt/blob/master/examples/samples/core/src/main/java/jolt/example/samples/app/tests/playground/box/BoxSpawnTest.java)
 
