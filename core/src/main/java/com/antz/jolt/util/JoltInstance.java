@@ -55,7 +55,7 @@ public class JoltInstance {
         mObjectVsBroadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(mBroadPhaseLayerInterface, NUM_BROAD_PHASE_LAYERS, mObjectLayerPairFilter, JoltLayers.NUM_LAYERS);
 
         mTempAllocator = Jolt.New_TempAllocatorImpl(mTempAllocatorSize);
-        mJobSystem = Jolt.New_JobSystemThreadPool(11); // 12 threads on Ryzen 5 - 1 = 11
+        mJobSystem = Jolt.New_JobSystemThreadPool(11); // (12 threads on Ryzen) 5 - 1 = 11
 
         factory = Jolt.New_Factory();
         Factory.set_sInstance(factory);
