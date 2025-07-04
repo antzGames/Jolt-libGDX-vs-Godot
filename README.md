@@ -4,7 +4,7 @@
 
 The Godot windows binaries are in the `Godot_Export` directory.  Run `JoltTests.exe` from the command line so you can get the reports.
 
-To run the Godot HTML build, go into the `Godot_Export\HTML` directory and run `server.bat` from the command line.
+To run the Godot HTML build, go into the `Godot_Export\HTML` directory and run `server.bat` (needs Python installed) from the command line.  If you do not have Python installed then use Itellij/Android Studio to run the `index.html` file.
 
 For the libGDX version just import this repo as a gradle project.  I used Java 17. 
 
