@@ -42,30 +42,40 @@ import net.mgsx.gltf.scene3d.utils.IBLBuilder;
 
 public class JoltScreen implements Screen {
 
-    public static final float TARGET_FRAME_LENGTH = 1f/60f;
-    public static final float DEATH_FRAME_LENGTH = 1f/30f;
+    // Jolt and test stuff
+    public static int NUMBER_OF_THREADS = 8;
 
     private JoltInstance joltInstance;
     protected PhysicsSystem mPhysicsSystem = null;
     protected BodyInterface mBodyInterface = null;
 
-    protected PerspectiveCamera camera;
-    private ScreenViewport viewport;
-
-    private AntzFPSLogger fpsLogger = new AntzFPSLogger();
-    private float resetDelaySeconds = 14;
-    private float timer, labelTimer, physicsTimer;
+    private float boxRestitution = 0.95f;
+    private int iteration = 0;
+    private int MAX_ITERATIONS = 5;
 
     private int totalCubes = 3000;
     private int cubeCount = 0;
-    private int iteration = 0;
+
+    public static final float TARGET_FRAME_LENGTH = 1f/60f;
+    public static final float DEATH_FRAME_LENGTH = 1f/30f;
+
+    // Logging stuff
+    private AntzFPSLogger fpsLogger = new AntzFPSLogger();
+    private float resetDelaySeconds = 14;
+    private float timer, labelTimer, physicsTimer;
+    private FpsData[] fps_data = new FpsData[MAX_ITERATIONS];
+
+    // Cubes and ground body and model instances
     private Array<CubeData> cubes = new Array<>();
     private CubeData groundData;
 
+    // Temp variables
     private Vec3 tempVec3;
     private Quat tempQuat;
     private Quaternion tempQuaternion;
     private Matrix4 tempRotationMatrix;
+
+    // SceneManager/Rendering stuff
     private Model cubeModel;
     private Model cubeModelInstanced;
     private Matrix4 instanceTransform = new Matrix4();
@@ -76,15 +86,14 @@ public class JoltScreen implements Screen {
     private Cubemap specularCubemap;
     private Texture brdfLUT;
     private SceneSkybox skybox;
-
     private Texture checkerBoardTexture;
     private Texture boxTexture;
-    private float boxRestitution = 0.95f;
-
     private SpriteBatch batch2D = new SpriteBatch();
     private BitmapFont font = new BitmapFont();
-
     private boolean renderModels = true;  // false = make it a physics only test
+
+    protected PerspectiveCamera camera;
+    private ScreenViewport viewport;
 
     @Override
     public void show() {
@@ -92,6 +101,7 @@ public class JoltScreen implements Screen {
         joltInstance = new JoltInstance();
         setPhysicsSystem(joltInstance.getPhysicsSystem());
 
+        // camera stuff
         camera = new PerspectiveCamera();
         viewport = new ScreenViewport(camera);
         camera.far = 1000f;
@@ -99,11 +109,13 @@ public class JoltScreen implements Screen {
         camera.position.set(30, 10, 30);
         camera.lookAt(0, 0, 0);
 
+        // Temp variables
         tempVec3 = Jolt.New_Vec3();
         tempQuat = new Quat();
         tempQuaternion = new Quaternion();
         tempRotationMatrix = new Matrix4();
 
+        // Scene Manager stuff
         sceneManager = new SceneManager();
         DirectionalLightEx light = new DirectionalLightEx();
         light.direction.set(-0.9f, -1, -1);
@@ -151,10 +163,12 @@ public class JoltScreen implements Screen {
 
         if (timer > resetDelaySeconds){
             timer = 0;
-            fpsLogger.reset("libGDX iteration " + iteration + " final report >>>");
+            if (iteration != 0) fpsLogger.reset("libGDX iteration " + iteration + " report >>>");
+            else fpsLogger.reset("libGDX iteration " + iteration + " will be discarded >>>");
             iteration++;
             if (iteration > 5){
                 Gdx.app.log("JoltTest", "*** Test has finished! ***");
+                logResults();
                 Gdx.app.exit();
             }
             resetBoxes();
@@ -204,7 +218,28 @@ public class JoltScreen implements Screen {
             font.draw(batch2D, "FPS: " + fpsLogger.fps, 2, 30);
             font.draw(batch2D, "MIN: " + fpsLogger.min + "   AVG: " + fpsLogger.average + "   MAX: " + fpsLogger.max, 2, 15);
             batch2D.end();
+
+            if (iteration != 0) {
+                fps_data[iteration-1] = new FpsData();
+                fps_data[iteration-1].min = fpsLogger.min;
+                fps_data[iteration-1].avg = fpsLogger.average;
+                fps_data[iteration-1].max = fpsLogger.max;
+            }
         }
+    }
+
+    private void logResults(){
+        FpsData report = new FpsData();
+        for (int i=0; i < MAX_ITERATIONS; i++){
+            report.min += fps_data[i].min;
+            report.avg += fps_data[i].avg;
+            report.max += fps_data[i].max;
+        }
+        report.min /= MAX_ITERATIONS;
+        report.avg /= MAX_ITERATIONS;
+        report.max /= MAX_ITERATIONS;
+
+        Gdx.app.log("libGDX final report, " + MAX_ITERATIONS + " iterations:", "MIN: " +report.min + "   AVG: " + report.avg + "   MAX:" + report.max);
     }
 
     private void renderModels(float delta) {
@@ -394,5 +429,11 @@ public class JoltScreen implements Screen {
     static class CubeData {
         public Body body;
         public ModelInstance modelInstance;
+    }
+
+    static class FpsData {
+        public float min;
+        public float avg;
+        public float max;
     }
 }

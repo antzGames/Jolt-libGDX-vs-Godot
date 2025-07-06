@@ -8,7 +8,8 @@ To run the Godot HTML build, go into the `Godot_Export\HTML` directory and run `
 
 For the libGDX version just import this repo as a gradle project.  I used Java 17. 
 
-You should change the number of threads libGDX uses for Jolt.  Set `Jolt.New_JobSystemThreadPool()` in the `JoltInstance` class to the number of threads your CPU has minus 1. 
+The default number of threads is set to 8. You should set the number of threads to less than the number of cores your CPU has. 
+To change, modify the `NUMBER_OF_THREADS` static variable in `JoltScreen.java`.
 
 The complete report can be viewed for more information: [JoltPhysics-Godot-vs-libGDX.pdf](https://github.com/antzGames/Jolt-libGDX-vs-Godot/blob/master/JoltPhysics-Godot-vs-libGDX.pdf)
 

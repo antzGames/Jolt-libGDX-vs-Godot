@@ -1,5 +1,6 @@
 package com.antz.jolt.util;
 
+import com.antz.jolt.screens.JoltScreen;
 import jolt.core.TempAllocatorImpl;
 import jolt.Jolt;
 import jolt.core.Factory;
@@ -55,7 +56,7 @@ public class JoltInstance {
         mObjectVsBroadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(mBroadPhaseLayerInterface, NUM_BROAD_PHASE_LAYERS, mObjectLayerPairFilter, JoltLayers.NUM_LAYERS);
 
         mTempAllocator = Jolt.New_TempAllocatorImpl(mTempAllocatorSize);
-        mJobSystem = Jolt.New_JobSystemThreadPool(11); // (12 threads on Ryzen) 5 - 1 = 11
+        mJobSystem = Jolt.New_JobSystemThreadPool(JoltScreen.NUMBER_OF_THREADS); // default is 8
 
         factory = Jolt.New_Factory();
         Factory.set_sInstance(factory);
