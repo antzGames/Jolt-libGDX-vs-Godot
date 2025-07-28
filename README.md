@@ -30,6 +30,12 @@ The test is based on **xpenatan**'s `gdx-jolt` sample test called [BoxSpawnTest.
 
 His original samples can be viewed [here](https://xpenatan.github.io/gdx-jolt/examples/samples/).
 
+## Summary of results
+
+![jolt1](https://github.com/user-attachments/assets/77a2065d-43dc-4373-bd66-37b189961809)
+
+![jolt2](https://github.com/user-attachments/assets/c6bec383-e32a-4fe4-a9b7-1aa13f579971)
+
 ## Platforms
 
 - `core`: Main module with the application logic shared by all platforms.
