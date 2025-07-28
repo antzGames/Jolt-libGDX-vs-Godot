@@ -12,7 +12,7 @@ To run the Godot HTML build, go into the `Godot_Export\HTML` directory and run `
 
 To run the libGDX HTML build, go into the `libGDX_Export\HTML` directory and run `server.bat` (needs Python installed) from the command line.  If you do not have Python installed then use Itellij/Android Studio to run the `index.html` file.
 
-For the libGDX desktop version just import this repo as a gradle project.  I used Java 17.
+If you are familair with Gradle libGDX projects just import this repo as a gradle project.  I used Java 17.  You then can run the libGDX desktop version and the teavm version using Gradle tasks.
 
 Or you can run the JAR file in `libGDX_Exports` from the command line.  This is the prefered method if you want to set the thread count. 
 
