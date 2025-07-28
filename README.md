@@ -1,15 +1,24 @@
-# JoltBenchmarks: libGDX vs. Godot
+# JoltBenchmarks: libGDX vs. Godot 4.5
 
-### This repo contains a libGDX project and Godot 4.5.beta1 compiled Windows binaries, and WASM single thread web build.
+### This repo contains a libGDX project and Godot 4.5.beta3 compiled Windows binaries, and WASM single thread web build.
 
-The Godot windows binaries are in the `Godot_Export` directory.  Run `JoltTests.exe` from the command line so you can get the reports.
+The Godot windows binaries are in the `Godot_Export` directory.  Use the console version so you get the performance data.
 
 To run the Godot HTML build, go into the `Godot_Export\HTML` directory and run `server.bat` (needs Python installed) from the command line.  If you do not have Python installed then use Itellij/Android Studio to run the `index.html` file.
 
-For the libGDX version just import this repo as a gradle project.  I used Java 17. 
+To run the libGDX HTML build, go into the `libGDX_Export\HTML` directory and run `server.bat` (needs Python installed) from the command line.  If you do not have Python installed then use Itellij/Android Studio to run the `index.html` file.
 
-The default number of threads is set to 8. You should set the number of threads to less than the number of cores your CPU has. 
-To change, modify the `NUMBER_OF_THREADS` static variable in `JoltScreen.java`.
+For the libGDX version just import this repo as a gradle project.  I used Java 17.
+
+Or you can run the JAR file in `libGDX_Exports` from the command line.  This is the prefered method if you want to set the thread count. 
+
+The default number of threads is set to 11. You should set the number of threads to less than the number of cores your CPU has. 
+To change pass the number of threads as a parameter to the jar file:
+
+For 7 threads:
+```
+java -jar JoltNemchmark-1.0.0.jar 7
+```
 
 The complete report can be viewed for more information: [JoltPhysics-Godot-vs-libGDX.pdf](https://github.com/antzGames/Jolt-libGDX-vs-Godot/blob/master/JoltPhysics-Godot-vs-libGDX.pdf)
 
