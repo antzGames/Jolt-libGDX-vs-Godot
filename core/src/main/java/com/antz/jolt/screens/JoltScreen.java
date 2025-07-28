@@ -1,5 +1,6 @@
 package com.antz.jolt.screens;
 
+import com.antz.jolt.Main;
 import com.antz.jolt.util.AntzFPSLogger;
 import com.antz.jolt.util.JoltInstance;
 import com.antz.jolt.util.JoltLayers;
@@ -43,7 +44,7 @@ import net.mgsx.gltf.scene3d.utils.IBLBuilder;
 public class JoltScreen implements Screen {
 
     // Jolt and test stuff
-    public static int NUMBER_OF_THREADS = 8;
+    public static int NUMBER_OF_THREADS = Main.threads; // Set to CPU max threads - 1
 
     private JoltInstance joltInstance;
     protected PhysicsSystem mPhysicsSystem = null;
@@ -100,6 +101,7 @@ public class JoltScreen implements Screen {
         fpsLogger.onlyReportMode = true; // just output final iteration report
         joltInstance = new JoltInstance();
         setPhysicsSystem(joltInstance.getPhysicsSystem());
+        Gdx.app.log("Jolt Config" ,"Number of threads: " +  NUMBER_OF_THREADS);
 
         // camera stuff
         camera = new PerspectiveCamera();
@@ -239,7 +241,7 @@ public class JoltScreen implements Screen {
         report.avg /= MAX_ITERATIONS;
         report.max /= MAX_ITERATIONS;
 
-        Gdx.app.log("libGDX final report, " + MAX_ITERATIONS + " iterations:", "MIN: " +report.min + "   AVG: " + report.avg + "   MAX:" + report.max);
+        Gdx.app.log("libGDX final report, " + MAX_ITERATIONS + " iterations.   ", "MIN: " +report.min + "   AVG: " + report.avg + "   MAX: " + report.max);
     }
 
     private void renderModels(float delta) {

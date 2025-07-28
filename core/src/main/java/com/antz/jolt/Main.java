@@ -7,6 +7,11 @@ import com.badlogic.gdx.Game;
 public class Main extends Game {
 
     public static Main main;
+    public static int threads;
+
+    public Main(int threadsIn) {
+        threads = threadsIn;
+    }
 
     @Override
     public void create() {
