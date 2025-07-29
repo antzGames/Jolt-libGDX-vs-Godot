@@ -21,7 +21,7 @@ To change pass the number of threads as a parameter to the jar file:
 
 For 7 threads:
 ```
-java -jar JoltNemchmark-1.0.0.jar 7
+java -jar JoltBenchmark-1.0.0.jar 7
 ```
 
 The complete report can be viewed for more information: [JoltPhysics-Godot-vs-libGDX.pdf](https://github.com/antzGames/Jolt-libGDX-vs-Godot/blob/master/JoltPhysics-Godot-vs-libGDX.pdf)
