@@ -16,25 +16,25 @@ If you are familair with Gradle libGDX projects just import this repo as a gradl
 
 Or you can run the JAR file in `libGDX_Exports` from the command line.  This is the prefered method if you want to set the thread count. 
 
-The default number of threads is set to 11. You should set the number of threads to less than the number of cores your CPU has. 
+The default number of threads is set to 4. You should set the number of threads to about one third the number of threads your CPU has. 
 To change pass the number of threads as a parameter to the jar file:
 
-For 7 threads:
+For 5 threads:
 ```
-java -jar JoltBenchmark-1.0.0.jar 7
+java -jar JoltBenchmark-1.0.0.jar 5
 ```
 
 The complete report can be viewed for more information: [JoltPhysics-Godot-vs-libGDX.pdf](https://github.com/antzGames/Jolt-libGDX-vs-Godot/blob/master/JoltPhysics-Godot-vs-libGDX.pdf)
 
-The test is based on **xpenatan**'s `gdx-jolt` sample test called [BoxSpawnTest.java](https://github.com/xpenatan/gdx-jolt/blob/master/examples/samples/core/src/main/java/jolt/example/samples/app/tests/playground/box/BoxSpawnTest.java)
+The test is based on **xpenatan**'s `gdx-jolt` sample test called [BoxSpawnTest.java](https://github.com/xpenatan/gdx-jolt/blob/master/examples/samples/core/src/main/java/jolt/example/samples/app/tests/playground/box/BoxSpawnTest.java).
+
+I made only a few changes to improve performance (removed ImGUI, debug rendering, added physics ticks logic)
 
 His original samples can be viewed [here](https://xpenatan.github.io/gdx-jolt/examples/samples/).
 
 ## Summary of results
 
-![jolt1](https://github.com/user-attachments/assets/77a2065d-43dc-4373-bd66-37b189961809)
 
-![jolt2](https://github.com/user-attachments/assets/c6bec383-e32a-4fe4-a9b7-1aa13f579971)
 
 ## Platforms
 
