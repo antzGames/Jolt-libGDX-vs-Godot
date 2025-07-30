@@ -43,9 +43,10 @@ import net.mgsx.gltf.scene3d.utils.IBLBuilder;
 
 public class JoltScreen implements Screen {
 
-    // Jolt and test stuff
-    public static int NUMBER_OF_THREADS = Main.threads; // Set to CPU max threads - 1
+    private boolean renderModels = true;  // false = make it a physics only test
 
+    // Jolt and test stuff
+    public static int NUMBER_OF_THREADS = Main.threads; // Set to 1/3 CPU threads
     private JoltInstance joltInstance;
     protected PhysicsSystem mPhysicsSystem = null;
     protected BodyInterface mBodyInterface = null;
@@ -91,7 +92,6 @@ public class JoltScreen implements Screen {
     private Texture boxTexture;
     private SpriteBatch batch2D = new SpriteBatch();
     private BitmapFont font = new BitmapFont();
-    private boolean renderModels = true;  // false = make it a physics only test
 
     protected PerspectiveCamera camera;
     private ScreenViewport viewport;
