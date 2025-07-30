@@ -28,13 +28,15 @@ The complete report can be viewed for more information: [JoltPhysics-Godot-vs-li
 
 The test is based on **xpenatan**'s `gdx-jolt` sample test called [BoxSpawnTest.java](https://github.com/xpenatan/gdx-jolt/blob/master/examples/samples/core/src/main/java/jolt/example/samples/app/tests/playground/box/BoxSpawnTest.java).
 
-I made only a few changes to improve performance (removed ImGUI, debug rendering, added physics ticks logic)
+I made only a few changes to improve performance (removed ImGUI, removed debug rendering, added physics ticks logic)
 
 His original samples can be viewed [here](https://xpenatan.github.io/gdx-jolt/examples/samples/).
 
 ## Summary of results
 
+![jolt1](https://github.com/user-attachments/assets/8084367e-ff99-40e6-a595-567e55fba6ce)
 
+![jolt2](https://github.com/user-attachments/assets/b6193922-86e7-42e9-891e-1bb5e67b00f9)
 
 ## Platforms
 
