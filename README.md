@@ -34,7 +34,9 @@ His original samples can be viewed [here](https://xpenatan.github.io/gdx-jolt/ex
 
 ## Summary of results
 
+![jolt1](https://github.com/user-attachments/assets/8084367e-ff99-40e6-a595-567e55fba6ce)
 
+![jolt2](https://github.com/user-attachments/assets/b6193922-86e7-42e9-891e-1bb5e67b00f9)
 
 ## Platforms
 
