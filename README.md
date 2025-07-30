@@ -8,13 +8,13 @@ YouTube video: https://youtu.be/1vwJIjNa1ik
 
 The Godot windows binaries are in the `Godot_Export` directory.  Use the console version so you get the performance data.
 
-To run the Godot HTML build, go into the `Godot_Export\HTML` directory and run `server.bat` (needs Python installed) from the command line.  If you do not have Python installed then use Itellij/Android Studio to run the `index.html` file.
+To run the Godot HTML build, go into the `Godot_Export\HTML` directory and run `server.bat` (needs Python installed) from the command line.  If you do not have Python installed then use IntelliJ/Android Studio to run the `index.html` file.
 
-To run the libGDX HTML build, go into the `libGDX_Export\HTML` directory and run `server.bat` (needs Python installed) from the command line.  If you do not have Python installed then use Itellij/Android Studio to run the `index.html` file.
+To run the libGDX HTML build, go into the `libGDX_Export\HTML` directory and run `server.bat` (needs Python installed) from the command line.  If you do not have Python installed then use IntelliJ/Android Studio to run the `index.html` file.
 
-If you are familair with Gradle libGDX projects just import this repo as a gradle project.  I used Java 17.  You then can run the libGDX desktop version and the teavm version using Gradle tasks.
+If you are familiar with Gradle libGDX projects just import this repo as a gradle project.  I used Java 17.  You then can run the libGDX desktop version and the teavm version using Gradle tasks.
 
-Or you can run the JAR file in `libGDX_Exports` from the command line.  This is the prefered method if you want to set the thread count. 
+Or you can run the JAR file in `libGDX_Exports` from the command line.  This is the preferred method if you want to set the thread count. 
 
 The default number of threads is set to 4. You should set the number of threads to about one third the number of threads your CPU has. 
 To change pass the number of threads as a parameter to the jar file:
